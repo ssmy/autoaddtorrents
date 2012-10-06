@@ -27,3 +27,5 @@ There are a number of options, all available via ./autoaddtorrents.py -h, and co
       -c CONNECT, --connect CONNECT
                             host to connect to
       --paused              add torrents as paused
+
+NOTE: I can't guarantee that this won't destroy your data or anything, but all it really does is read in the torrents, search using `find`, then adds them to transmission. I suppose it could pollute your transmission database, but it only adds, and if you add `--paused`, shouldn't be an issue.
