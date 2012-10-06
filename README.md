@@ -1,5 +1,5 @@
-autoaddtorrents
-===============
+autoaddtorrents to Transmission
+===============================
 
 If you download a large number of torrents and sort them into the appropriate directories (file system organization is the best media library), you will eventually end up your torrent files centrally located, but with your media scattered. This is all okay, until you reinstall. Suddenly, you realize that you have to readd all of those torrents, finding which directory they are in, and then choosing that directory when you add them.
 
