@@ -7,6 +7,18 @@ Very time-consuming. But you really should do it, since seeding is good.
 
 This program basically just automates that process, specifically for transmission. Just enable the remote interface in Transmission, then feed autoaddtorrents a bunch of torrent files and where to look for the data.
 
+Installation
+------------
+
+The script is just python, and should definitely work on OSX and Linux. Theoretically, it should work on Windows if you can figure out how to install `find`. All paths and such are OS-independent.
+
+### Prerequisites
+
+The script requires Python >= 2.7 (Not Python 3 yet), bencode, and transmission. The last two I recommend you install via [pip](http://www.pip-installer.org/en/latest/installing.html). Just `pip install bencode transmissionrpc`.
+
+Options
+-------
+
 There are a number of options, all available via ./autoaddtorrents.py -h, and copied here for easy access:
 
     usage: autoaddtorrents.py [-h] [-d DIRECTORY] [-v] [-p PORT] [-c CONNECT]
