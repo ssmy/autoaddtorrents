@@ -34,9 +34,11 @@ There are a number of options, all available via ./autoaddtorrents.py -h, and co
       -h, --help            show this help message and exit
       -d DIRECTORY, --directory DIRECTORY
                             directory to scan for media
+      -u, --user            user to connect to transmission with
+      -p, --password        password to connect to transmission
       -v, --verbose         increase output verbosity
-      -p PORT, --port PORT  port to connect to transmission
-      -c CONNECT, --connect CONNECT
+      --port PORT           port to connect to transmission
+      --host                CONNECT
                             host to connect to
       --paused              add torrents as paused
 
