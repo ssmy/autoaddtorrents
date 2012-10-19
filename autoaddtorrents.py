@@ -4,14 +4,16 @@ import transmissionrpc, bencode, sys, subprocess, os, argparse
 parser = argparse.ArgumentParser(description="Add torrents to transmission automatically")
 parser.add_argument('torrents', nargs='+', help="Some torrent files")
 parser.add_argument('-d', '--directory', help="directory to scan for media", action="store", default=os.getcwd())
+parser.add_argument('-u', '--user', help="username for transmission", action="store", default=None)
+parser.add_argument('-p', '--password', help="password for transmission", action="store", default=None)
 parser.add_argument('-v', '--verbose', help="increase output verbosity", action="store_true")
-parser.add_argument('-p', '--port', help="port to connect to transmission", action="store", type=int, default=9091)
-parser.add_argument('-c', '--connect', help="host to connect to", action="store", default="localhost")
+parser.add_argument('--port', help="port to connect to transmission", action="store", type=int, default=9091)
+parser.add_argument('--host', help="host to connect to", action="store", default="localhost")
 parser.add_argument('--paused', help="add torrents as paused", action="store_true", default=False)
 args = parser.parse_args()
 
 try:
-  trans = transmissionrpc.Client(args.connect, args.port)
+  trans = transmissionrpc.Client(args.host, args.port)
 except transmissionrpc.TransmissionError:
   print "Could not connect to transmission."
   sys.exit(1)
