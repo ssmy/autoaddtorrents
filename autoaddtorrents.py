@@ -13,7 +13,7 @@ parser.add_argument('--paused', help="add torrents as paused", action="store_tru
 args = parser.parse_args()
 
 try:
-  trans = transmissionrpc.Client(args.host, args.port)
+  trans = transmissionrpc.Client(address=args.host, port=args.port, user=args.user, password=args.password)
 except transmissionrpc.TransmissionError:
   print "Could not connect to transmission."
   sys.exit(1)
@@ -52,7 +52,7 @@ for torrent in args.torrents:
     try:
       trans.add_uri(os.path.join(os.getcwd(), torrent),download_dir=os.path.dirname(list[0]),paused=args.paused)
     except transmissionrpc.TransmissionError:
-      print "Error adding %s. Perhaps it is already added." % nicename
+      if args.verbose: print "Error adding %s. Perhaps it is already added." % nicename
   elif len(list) == 0:
     print "No results found for torrent %s" % nicename
     error = True
